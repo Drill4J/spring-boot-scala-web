@@ -4,7 +4,20 @@ A sample web application using spring-boot and Scala
 It is forked from https://github.com/bijukunjummen/spring-boot-scala-web
 to demonstrate integration with Drill4J
 
-== How to run
+== How to run by docker
+
+=== docker-compose
+
+- Run admin & scala app: docker-compose up
+- Run only scala app: docker-compose -f docker-compose-scala.yml up
+
+=== How to build a docker image
+- sbt universal:stage
+- docker build -t drill4j/scala-spring .
+- docker run -p 8080:8080 drill4j/scala-spring
+
+
+== How to run by build tools
 
 === common steps
 . take from artifactory stable version windows: https://oss.jfrog.org/artifactory/oss-release-local/com/epam/drill/drill-agent-mingwX64/
