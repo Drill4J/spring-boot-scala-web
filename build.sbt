@@ -27,3 +27,5 @@ lazy val root = (project in file(".")).
 // set the main class for the main 'run' task
 // change Compile to Test to set it for 'test:run'
 mainClass in (Compile, run) := Some("mvctest.Application")
+scriptClasspath := Seq("*")
+enablePlugins(JavaAppPackaging)
