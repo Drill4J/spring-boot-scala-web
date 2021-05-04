@@ -30,6 +30,7 @@ class HotelController @Autowired()(private val hotelRepository: HotelRepository)
   @GetMapping(params = Array("form"))
   def createForm(model: Model) = {
     model.addAttribute("hotel", new Hotel())
+    printMe()
     "hotels/create"
   }
 
@@ -46,12 +47,16 @@ class HotelController @Autowired()(private val hotelRepository: HotelRepository)
   @PostMapping(value = Array("/update"))
   def update(@Valid hotel: Hotel, bindingResult: BindingResult) =
     if (bindingResult.hasErrors()) {
+      println("something")
       "hotels/edit"
     } else {
       hotelRepository.save(hotel)
       "redirect:/hotels"
     }
 
+  def printMe( ) : Unit = {
+        println("Hello, Scala!")
+  }
 
   @GetMapping(value = Array("/delete/{id}"))
   def delete(@PathVariable("id") id: Long) = {

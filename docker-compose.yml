@@ -16,11 +16,11 @@ services:
       - 8091:8080
 
   example-app:
-    image: drill4j/scala-spring-sample:0.1.0
+    image: drill4j/scala-spring-sample:0.2.0
     ports:
       - 8087:8080
     environment:
-      - JAVA_TOOL_OPTIONS="-agentpath:/data/libdrill_agent.so=drillInstallationDir=/data,adminAddress=host.docker.internal:8090,agentId=ScalaExampleAgent,buildVersion=0.1.0,logLevel=INFO"
+      - JAVA_TOOL_OPTIONS="-agentpath:/data/libdrill_agent.so=drillInstallationDir=/data,adminAddress=host.docker.internal:8090,agentId=ScalaExampleAgent,buildVersion=0.2.0,logLevel=INFO"
     volumes:
       - agent-files:/data
 

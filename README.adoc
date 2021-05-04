@@ -13,8 +13,8 @@ to demonstrate integration with Drill4J
 
 === How to build a docker image
 - sbt universal:stage
-- docker build -t drill4j/scala-spring-sample .
-- docker run -p 8080:8080 drill4j/scala-spring-sample
+- docker build -t drill4j/scala-spring-sample:0.2.0 .
+- docker run -p 8080:8080 drill4j/scala-spring-sample:0.2.0
 
 
 == How to run by build tools
