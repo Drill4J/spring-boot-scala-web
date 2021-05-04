@@ -3,7 +3,7 @@ version: '3'
 services:
 
   example-app:
-    image: drill4j/scala-spring:latest
+    image: drill4j/scala-spring-sample:0.1.0
     ports:
       - 8087:8080
     environment:
