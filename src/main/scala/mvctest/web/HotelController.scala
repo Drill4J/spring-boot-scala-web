@@ -1,8 +1,5 @@
 package mvctest.web
 
-import java.lang.Long
-import javax.validation.Valid
-
 import mvctest.domain.Hotel
 import mvctest.service.HotelRepository
 import org.springframework.beans.factory.annotation.Autowired
@@ -10,6 +7,8 @@ import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.validation.BindingResult
 import org.springframework.web.bind.annotation._
+
+import javax.validation.Valid
 
 @Controller
 @RequestMapping(Array("/hotels"))
@@ -60,4 +59,9 @@ class HotelController @Autowired()(private val hotelRepository: HotelRepository)
     "redirect:/hotels"
   }
 
+  @GetMapping(value = Array("/deleteAll"))
+  def deleteAll() = {
+    hotelRepository.deleteAll()
+    "redirect:/hotels"
+  }
 }
